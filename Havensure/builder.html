@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Builder Dashboard | Havensure 360</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ff3131, rgba(0,0,0,0.1)),
+                  url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container-main {
+      flex: 1;
+      padding: 60px 20px 120px 20px; /* extra bottom padding for AI card */
+    }
+
+    .card {
+      border-radius: 12px;
+      background-color: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .btn {
+      background-color: #000 !important;
+      color: #fff !important;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: #ff3131 !important;
+      color: #000 !important;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: auto;
+      color: #fff;
+    }
+
+    input.form-control {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid white;
+    }
+
+    input.form-control::placeholder {
+      color: #ccc;
+    }
+
+    a {
+      color: #ff3131;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+    .navbar-brand img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+
+    /* AI Insights Button */
+    #aiForm button {
+      width: 30%;        /* smaller button */
+      display: block;
+      margin: 0 auto;    /* center button */
+    }
+  </style>
+</head>
+<body>
+ <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="buyer.html">
+        <img src="images/42.png" alt="Havensure Logo" width="200" height="60" class="me-2">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="builder.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container container-main">
+    <h2 class="mb-4 text-center">Welcome, Builder 👷</h2>
+
+    <div class="row mb-4">
+      <!-- Compliance Status -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow p-3">
+          <h5 class="card-title">Compliance Status</h5>
+          <p><b>Electrical Safety:</b> ✅ Passed</p>
+          <p><b>Fire Safety:</b> ⚠ Pending</p>
+          <p><b>Structural:</b> ✅ Approved</p>
+        </div>
+      </div>
+
+      <!-- Upload Documents -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow p-3">
+          <h5 class="card-title">Upload Documents</h5>
+          <form>
+            <input type="file" class="form-control mb-2">
+            <button class="btn w-100">Upload</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scheduled Inspections -->
+    <div class="card shadow p-3 mb-4">
+      <h5 class="card-title">Scheduled Inspections</h5>
+      <ul>
+        <li>Foundation Audit - 10 Sept 2025</li>
+        <li>Plumbing & Electrical - 15 Sept 2025</li>
+        <li>Final Handover Check - 20 Sept 2025</li>
+      </ul>
+    </div>
+
+    <!-- AI Insights -->
+    <div class="card shadow p-3 mb-5">
+      <h5 class="card-title text-center">AI Insights 🤖</h5>
+      <form id="aiForm" class="text-center">
+        <input type="file" class="form-control mb-3" id="reportUpload" accept=".pdf,.docx,.txt">
+        <button type="submit" class="btn btn-dark">Analyze with AI</button>
+      </form>
+      <div id="aiResult" class="mt-3 alert alert-info d-none text-start"></div>
+    </div>
+    <style>
+  /* AI Insights Styling */
+  #aiForm button {
+    width: 20%;        /* smaller button */
+    display: block;
+    margin: 0 auto;    /* center the button */
+  }
+</style>
+
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3" style="background-color: #044aad;">
+  <p class="mb-0">© 2025 Havensure Handover 360 | Built on Trust & Transparency</p>
+</footer>
+
+  <!-- AI Chatbot Floating Widget -->
+  <div id="ai-chatbot">
+    <div id="chatbox-header">🤖 Ask Havensure AI</div>
+    <div id="chatbox-body" style="display:none;">
+      <div id="chat-messages"></div>
+      <input type="text" id="chat-input" placeholder="Type your question...">
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <style>
+    #ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: white;
+      font-size: 14px;
+      z-index: 9999;
+    }
+    #chatbox-header {
+      background: #000;
+      padding: 10px;
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+    }
+    #chatbox-body {
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    #chat-messages {
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    #chat-input {
+      width: 70%;
+      padding: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+    }
+    #chat-send {
+      width: 25%;
+      background:#ff3131;
+      border: none;
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    // Floating AI Chatbot Toggle
+    const chatHeader = document.getElementById("chatbox-header");
+    const chatBody = document.getElementById("chatbox-body");
+    chatHeader.addEventListener("click", () => {
+      chatBody.style.display = (chatBody.style.display === "none") ? "block" : "none";
+    });
+
+    const chatMessages = document.getElementById("chat-messages");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+
+    chatSend.addEventListener("click", () => {
+      const userMsg = chatInput.value.trim();
+      if(userMsg){
+        const userDiv = document.createElement("div");
+        userDiv.textContent = "🧑: " + userMsg;
+        chatMessages.appendChild(userDiv);
+
+        const botDiv = document.createElement("div");
+        botDiv.textContent = "🤖: Thanks for asking! (AI replies will come here)";
+        chatMessages.appendChild(botDiv);
+
+        chatInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    });
+
+    // AI Insights Form
+    document.getElementById("aiForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const resultBox = document.getElementById("aiResult");
+      resultBox.classList.remove("d-none");
+      resultBox.innerHTML = `
+        ✅ Report Analyzed<br>
+        - Electrical systems are safe.<br>
+        - Minor plumbing issues need attention.<br>
+        - Painting quality requires re-check before final handover.
+      `;
+    });
+  </script>
+</body>
+</html>

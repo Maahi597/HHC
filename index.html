@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HavenSure Group - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-left">
+      <img src="images/HV Logo.png" alt="HavenSure Logo" class="logo">
+      
+    </div> 
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Slider Section -->
+   <section class="hero-slider">
+  <div class="slide active" style="background-image: url('images/123.jpg');">
+    <div class="slide-text">
+      <h2>Built for You. Verified by Us.</h2>
+      <p>Delivering precision, compliance, and care to ensure every property handover meets the highest standards.</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image: url('images/assurence2.png');">
+    <div class="slide-text">
+      <h2>Your Property, Our Assurence</h2>
+      <p>Ensuring flawless delivery and complete compliance for builders and buyers.</p>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image: url('images/hnaadover\ 1.jpg');">
+    <div class="slide-text">
+      <h2>Trusted Handover Solutions</h2>
+      <p>Technology-driven audits for smooth and verified property handovers.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Intro -->
+  <section class="about">
+    <h2>Welcome to HavenSure</h2>
+    <p>
+      We are leaders in property audits and handover solutions. Our technology-driven approach ensures
+      flawless delivery of homes and complete compliance for builders and buyers alike.
+    </p>
+    <a href="about.html" class="btn">Explore More</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 HavenSure Group | All Rights Reserved</p>
+  </footer>
+
+  <!-- Slider JS -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if(i === index) slide.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 8000); // Change slide every 8 seconds
+  </script>
+
+</body>
+</html>

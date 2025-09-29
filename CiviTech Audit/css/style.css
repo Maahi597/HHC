@@ -1,0 +1,107 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  height: 60px;
+}
+
+.company-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #044aad;
+}
+
+/* Navbar Links */
+nav ul {
+  display: flex;
+  gap: 2rem;   /* ✅ spacing between menu items */
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #044aad;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff3131;  /* Highlight */
+}
+
+/* Coming Soon Section */
+.coming-soon {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #044aad, #0077cc);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.coming-soon h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.coming-soon p {
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background: #044aad;
+  color: #ddd;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+/* Coming Soon Section with Background Image */
+.coming-soon {
+  background: url("../images/come\ soon.jpg") no-repeat center center/cover;
+  
+}
+
+.coming-soon h1,
+.coming-soon p {
+  position: relative;
+  z-index: 1; /* keep text above overlay */
+}

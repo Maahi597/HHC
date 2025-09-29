@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Havensure 360</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap Icons (added for search icon) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+
+    .page-background {
+      flex: 1;
+      background: linear-gradient(to bottom, #ff3131, rgba(0,0,0,0.1)), 
+                  url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      padding: 40px 0;
+    }
+
+    .overlay-box {
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    h2, h3 {
+      color: #fff;
+    }
+
+    img {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background: #000;
+      margin-top: auto;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    ul.text-start {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.text-start li::before {
+      content: "✔️ ";
+    }
+    /* Navbar search input */
+    #navbarSearch {
+      display: none;
+      width: 200px;
+      transition: width 0.3s ease;
+    }
+    .navbar-brand img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/42.png" alt="Havensure Logo" width="150" height="50" class="me-2">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+
+        <!-- Search icon -->
+        <li class="nav-item ms-3 d-flex align-items-center">
+          <button class="btn btn-outline-light p-1" id="searchToggle">
+            <i class="bi bi-search"></i> <!-- now icon will appear -->
+          </button>
+          <input type="text" id="navbarSearch" class="form-control ms-2" placeholder="Search...">
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Main Content with Background -->
+  <div class="page-background">
+
+    <!-- Section Title -->
+    <section>
+      <div class="container overlay-box">
+        <h2>Our Services</h2>
+        <p class="lead">Havensure 360 provides trusted and tech-enabled services for homebuyers and builders. We focus on transparency, compliance, and quality assurance.</p>
+      </div>
+    </section>
+
+    <!-- Services Row -->
+    <section>
+      <div class="container overlay-box">
+        <div class="row text-center">
+          <!-- Homebuyers -->
+<div class="col-md-4 mb-4">
+  <img src="images/First-home-guide.png" alt="Homebuyers Icon">
+  <h3 class="mt-3">For Homebuyers</h3>
+  <p>Comprehensive digital snagging inspections covering 300+ checks, legal due diligence, and property compliance audits. We ensure your dream home is delivered exactly as promised.</p>
+  <ul class="text-start d-inline-block">
+    <li>Detailed digital inspection reports</li>
+    <li>Legal & compliance verification</li>
+    <li>AI-assisted property quality checks</li>
+    <li>360° photos and drone inspections</li>
+  </ul>
+  <!-- Advantages -->
+  <h5 class="mt-3">Advantages</h5>
+  <ul class="text-start d-inline-block list-unstyled">
+    <li> Peace of mind before moving in</li>
+    <li> Prevent hidden repair costs</li>
+    <li> Legal safety & compliance ensured</li>
+    <li> Transparent inspection process</li>
+  </ul>
+</div>
+
+<!-- Builders -->
+<div class="col-md-4 mb-4">
+  <img src="images/Best-Builder-.jpg" alt="Builders Icon">
+  <h3 class="mt-3">For Builders</h3>
+  <p>Pre-handover quality audits, documentation, and compliance checks to minimize rework, delays, and disputes. We help builders maintain credibility and deliver on promises.</p>
+  <ul class="text-start d-inline-block">
+    <li>Pre-delivery inspections and snagging</li>
+    <li>Document verification & reporting</li>
+    <li>Compliance & legal audit support</li>
+    <li>Reduce rework costs and project delays</li>
+  </ul>
+  <!-- Advantages -->
+  <h5 class="mt-3">Advantages</h5>
+  <ul class="text-start d-inline-block list-unstyled">
+    <li> Quality Audits Increasing Productivity</li>
+    <li> Assured for quality delivers</li>
+    <li> Indentify/Verification of Subcontractor bills for quality compliance</li>
+    <li> Stage on Stage verification facilitate resolution of quaity issues not cary forword for next stage</li>
+    <li> Safety and Quality working hand on hand enhance the credibility of the company</li>
+    <li> Promise made deliverd in time and style</li>
+  </ul>
+</div> 
+<!-- Infra Projects -->
+<div class="col-md-4 mb-4">
+  <img src="images/Infra Projects.png" alt="Infra Projects Icon">
+  <h3 class="mt-3">Infra Projects</h3>
+  <p>We support large-scale infrastructure projects with advanced quality checks, digital monitoring, and compliance audits. Using drones, BIM, and AI-driven inspections, we ensure projects are delivered on time and meet safety & regulatory standards.</p>
+  <ul class="text-start d-inline-block">
+    <li>AI-driven quality & safety audits</li>
+    <li>BIM integration for progress tracking</li>
+    <li>Drone & 360° site inspections</li>
+    <li>Digital compliance documentation</li>
+  </ul>
+  <!-- Advantages -->
+  <h5 class="mt-3">Advantages</h5>
+  <ul class="text-start d-inline-block list-unstyled">
+    <li> Improve efficiency in large-scale projects</li>
+    <li> Ensure compliance with safety regulations</li>
+    <li> Minimize risks of costly delays</li>
+    <li> Transparent digital reporting for stakeholders</li>
+  </ul>
+</div>
+
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white text-center py-3" style="background-color: #044aad;">
+  <p class="mb-0">© 2025 Havensure Handover 360 | Built on Trust & Transparency</p>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <!-- AI Chatbot Floating Widget -->
+  <div id="ai-chatbot">
+    <div id="chatbox-header">🤖 Ask Havensure AI</div>
+    <div id="chatbox-body" style="display:none;">
+      <div id="chat-messages"></div>
+      <input type="text" id="chat-input" placeholder="Type your question...">
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <style>
+    #ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: white;
+      font-size: 14px;
+      z-index: 9999;
+    }
+    #chatbox-header {
+      background:#000;
+      padding: 10px;
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+    }
+    #chatbox-body {
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    #chat-messages {
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    #chat-input {
+      width: 70%;
+      padding: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+    }
+    #chat-send {
+      width: 25%;
+      background: #ff3131;
+      border: none;
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+      // Collapsible Navbar Search
+  const searchToggle = document.getElementById("searchToggle");
+  const navbarSearch = document.getElementById("navbarSearch");
+  searchToggle.addEventListener("click", () => {
+    if(navbarSearch.style.display === "none" || navbarSearch.style.display === ""){
+      navbarSearch.style.display = "block";
+      navbarSearch.focus();
+    } else {
+      navbarSearch.style.display = "none";
+    }
+  });
+    const chatHeader = document.getElementById("chatbox-header");
+    const chatBody = document.getElementById("chatbox-body");
+    chatHeader.addEventListener("click", () => {
+      chatBody.style.display = (chatBody.style.display === "none") ? "block" : "none";
+    });
+
+    const chatMessages = document.getElementById("chat-messages");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+
+    chatSend.addEventListener("click", () => {
+      const userMsg = chatInput.value.trim();
+      if(userMsg){
+        const userDiv = document.createElement("div");
+        userDiv.textContent = "🧑: " + userMsg;
+        chatMessages.appendChild(userDiv);
+
+        const botDiv = document.createElement("div");
+        botDiv.textContent = "🤖: Thanks for asking! (AI replies will come here)";
+        chatMessages.appendChild(botDiv);
+
+        chatInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>

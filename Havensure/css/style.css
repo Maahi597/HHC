@@ -1,0 +1,109 @@
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  border-radius: 50%;
+}
+
+/* header {
+  background: linear-gradient(rgb(136, 179, 240), rgba(0,0,0,0.6)), url('../images/banner.jpg') no-repeat center center/cover;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+} */
+/* Video Header */
+.video-header {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  z-index: -1;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* adjust opacity here */
+}
+
+/* Navbar search button */
+#searchToggle {
+  background: #ff3131;
+  border: none;
+  color: #000;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+#searchToggle:hover {
+  background: #fff;
+  transform: scale(1.1);
+  color: #ff3131;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+}
+
+/* Project Snapshots section text */
+section.bg-light, 
+section.bg-light h2, 
+section.bg-light p {
+  color: #000 !important;
+}
+.navbar-brand img {
+  border-radius: 0 !important; /* removes the circle */
+  object-fit: contain;         /* keeps full logo visible */
+}
+/* Custom Navbar Colors */
+.navbar {
+  background-color:white !important; /* bright red background */
+}
+
+.navbar .nav-link {
+  color: #044aad !important; /* white text for links */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #ff3131!important; /* golden/yellow hover effect */
+}
+
+.navbar .nav-link.active {
+  color: #ff3131!important; /* active page highlighted */
+}
+
+

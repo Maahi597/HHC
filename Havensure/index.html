@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Havensure Handover 360</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Lightbox CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Body and general styles */
+    body {
+      background: linear-gradient(to bottom, #ff3131, rgba(0,0,0,0.1)),
+                  url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar search input */
+    #navbarSearch {
+      display: none;
+      width: 200px;
+      transition: width 0.3s ease;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: auto;
+      color: #fff;
+    }
+
+    /* AI Chatbot */
+    #ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: white;
+      font-size: 14px;
+      z-index: 9999;
+    }
+    #chatbox-header {
+      background: #000;
+      padding: 10px;
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+    }
+    #chatbox-body {
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    #chat-messages {
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    #chat-input {
+      width: 70%;
+      padding: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+    }
+    #chat-send {
+      width: 25%;
+      background: red;
+      border: none;
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/42.png" alt="Havensure Logo" width="200" height="60" class="me-2">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+
+          <!-- Search icon -->
+          <li class="nav-item ms-3 d-flex align-items-center">
+            <button class="btn btn-outline-light p-1" id="searchToggle">
+              <i class="bi bi-search"></i>
+            </button>
+            <input type="text" id="navbarSearch" class="form-control ms-2" placeholder="Search...">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="video-header">
+    <video autoplay muted loop playsinline class="video-bg">
+      <source src="images/Video3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay d-flex flex-column justify-content-center align-items-center text-white text-center">
+      <h1 class="display-4 fw-bold">Turning Promises into Proof</h1>
+      <p class="lead">Empowering Homebuyers & Builders with Trust, Transparency & Accountability</p>
+      <a href="services.html" class="btn btn-lg mt-3" style="background-color: #044aad; color: white; border: none;">
+  Explore Our Services
+</a>
+
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h3>For Homebuyers</h3>
+          <img src="images/First-home-guide.png" alt="Homebuyers Icon" width="425" class="my-3 d-block mx-auto">
+          <p>Detailed snagging & legal checks to ensure your dream home is delivered exactly as promised.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h3>For Builders</h3>
+          <img src="images/Best-Builder-.jpg" alt="Builders Icon" width="425" class="my-3 d-block mx-auto">
+          <p>Stage-wise audits, compliance verification & timely certifications to save costs and build trust.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h3>Infra Projects</h3>
+          <img src="images/Infra Projects.png" alt="Technology Icon" width="425" class="my-3 d-block mx-auto">
+          <p>Comprehensive infrastructure solutions powered by AI, drones, BIM, and 360° inspections — enabling smarter planning, monitoring, and project delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery with Lightbox -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Quality Checks & Reports</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <a href="images/audit.jpg" data-lightbox="gallery" data-title="Audit Check">
+            <img src="images/audit.jpg" class="img-fluid rounded shadow" alt="Audit Sample">
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="images/Site inspection.jpg" data-lightbox="gallery" data-title="Site Inspection">
+            <img src="images/Site inspection.jpg" class="img-fluid rounded shadow" alt="Site Inspection">
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="images/sample report.png" data-lightbox="gallery" data-title="Handover Report">
+            <img src="images/sample report.png" class="img-fluid rounded shadow" alt="Report Sample">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer class="text-white text-center py-3" style="background-color: #044aad;">
+  <p class="mb-0">© 2025 Havensure Handover 360 | Built on Trust & Transparency</p>
+</footer>
+
+  <!-- AI Chatbot Floating Widget -->
+  <div id="ai-chatbot">
+    <div id="chatbox-header">🤖 Ask Havensure AI</div>
+    <div id="chatbox-body" style="display:none;">
+      <div id="chat-messages"></div>
+      <input type="text" id="chat-input" placeholder="Type your question...">
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    // Collapsible Navbar Search
+    const searchToggle = document.getElementById("searchToggle");
+    const navbarSearch = document.getElementById("navbarSearch");
+    searchToggle.addEventListener("click", () => {
+      if(navbarSearch.style.display === "none" || navbarSearch.style.display === ""){
+        navbarSearch.style.display = "block";
+        navbarSearch.focus();
+      } else {
+        navbarSearch.style.display = "none";
+      }
+    });
+
+    // AI Chatbot
+    const chatHeader = document.getElementById("chatbox-header");
+    const chatBody = document.getElementById("chatbox-body");
+    chatHeader.addEventListener("click", () => {
+      chatBody.style.display = (chatBody.style.display === "none") ? "block" : "none";
+    });
+
+    const chatMessages = document.getElementById("chat-messages");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+
+    chatSend.addEventListener("click", () => {
+      const userMsg = chatInput.value.trim();
+      if(userMsg){
+        const userDiv = document.createElement("div");
+        userDiv.textContent = "🧑: " + userMsg;
+        chatMessages.appendChild(userDiv);
+
+        const botDiv = document.createElement("div");
+        botDiv.textContent = "🤖: Thanks for asking! (AI replies will come here)";
+        chatMessages.appendChild(botDiv);
+
+        chatInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>

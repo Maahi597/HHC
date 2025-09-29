@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Havensure 360</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap Icons (added for search icon) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+    .page-background {
+      flex: 1;
+      background: linear-gradient(to bottom, #ff3131, rgba(0,0,0,0.1)),
+                  url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      padding: 60px 20px;
+    }
+    .overlay-box {
+      background: rgba(50,50,50,0.85);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+    h2, h4, label {
+      color: #fff;
+    }
+
+    /* Navbar active and hover colors */
+    .navbar-nav .nav-link.active {
+      color: #ff3131 !important; /* Active link color */
+    }
+    .navbar-nav .nav-link {
+      color: #044aad !important; /* Default navbar link color */
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ff3131 !important; /* Hover effect */
+    }
+
+    .nav-pills .nav-link {
+      color: #fff;
+    }
+    .nav-pills .nav-link.active {
+      background-color: #000 !important;
+      color: #fff !important;
+    }
+    .card {
+      border-radius: 12px;
+      background-color: #222;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: #fff;
+      position: relative;
+    }
+    .form-control {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      padding-right: 2.5rem;
+    }
+    .form-control::placeholder {
+      color: #ccc;
+    }
+    .btn {
+      background-color: #000 !important;
+      color: #fff !important;
+      border: none;
+    }
+    .btn:hover {
+      background-color: #ff3131!important;
+    }
+    .password-toggle {
+      position: absolute;
+      right: 15px;
+      top: 38px;
+      cursor: pointer;
+      color: #ccc;
+      font-size: 1.2rem;
+    }
+    footer {
+      background: #000;
+      margin-top: auto;
+      text-align: center;
+      padding: 15px 0;
+    }
+    /* Navbar search input */
+    #navbarSearch {
+      display: none;
+      width: 200px;
+      transition: width 0.3s ease;
+    }
+    .navbar-brand img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/42.png" alt="Havensure Logo" width="200" height="60" class="me-2">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+
+        <!-- Search icon -->
+        <li class="nav-item ms-3 d-flex align-items-center">
+          <button class="search-btn p-1" id="searchToggle">
+  <i class="bi bi-search"></i>
+</button>
+
+          <input type="text" id="navbarSearch" class="form-control ms-2" placeholder="Search...">
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Main Content -->
+  <div class="page-background">
+    <section class="overlay-box">
+      <div class="container text-center">
+        <h2 class="mb-4">User Login</h2>
+        <ul class="nav nav-pills justify-content-center mb-4" id="loginTabs" role="tablist">
+          <li class="nav-item"><a class="nav-link active" id="buyer-tab" data-bs-toggle="pill" href="#buyer" role="tab">Buyer</a></li>
+          <li class="nav-item"><a class="nav-link" id="builder-tab" data-bs-toggle="pill" href="#builder" role="tab">Builder</a></li>
+          <li class="nav-item"><a class="nav-link" id="auditor-tab" data-bs-toggle="pill" href="#auditor" role="tab">Auditor</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Buyer Login -->
+          <div class="tab-pane fade show active" id="buyer" role="tabpanel">
+            <div class="card shadow-sm p-4 col-md-6 mx-auto mt-3 position-relative">
+              <h4 class="mb-3 text-center">Buyer Login</h4>
+              <form id="buyerLogin">
+                <div class="mb-3 position-relative">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="mb-3 position-relative">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" placeholder="Enter your password" id="buyerPassword">
+                  <i class="bi bi-eye-fill password-toggle" id="toggleBuyerPassword"></i>
+                </div>
+                <button type="submit" class="btn w-100">Login</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Builder Login -->
+          <div class="tab-pane fade" id="builder" role="tabpanel">
+            <div class="card shadow-sm p-4 col-md-6 mx-auto mt-3 position-relative">
+              <h4 class="mb-3 text-center">Builder Login</h4>
+              <form id="builderLogin">
+                <div class="mb-3 position-relative">
+                  <label class="form-label">Company Email</label>
+                  <input type="email" class="form-control" placeholder="Enter company email">
+                </div>
+                <div class="mb-3 position-relative">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" placeholder="Enter password" id="builderPassword">
+                  <i class="bi bi-eye-fill password-toggle" id="toggleBuilderPassword"></i>
+                </div>
+                <button type="submit" class="btn w-100">Login</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Auditor Login -->
+          <div class="tab-pane fade" id="auditor" role="tabpanel">
+            <div class="card shadow-sm p-4 col-md-6 mx-auto mt-3 position-relative">
+              <h4 class="mb-3 text-center">Auditor Login</h4>
+              <form id="auditorLogin">
+                <div class="mb-3 position-relative">
+                  <label class="form-label">Auditor ID</label>
+                  <input type="text" class="form-control" placeholder="Enter Auditor ID" id="auditorPassword">
+                  <i class="bi bi-eye-fill password-toggle" id="toggleAuditorPassword"></i>
+                </div>
+                <div class="mb-3 position-relative">
+                  <label class="form-label">Password</label>
+                  <input type="password" class="form-control" placeholder="Enter password" id="auditorPassword2">
+                  <i class="bi bi-eye-fill password-toggle" id="toggleAuditorPassword2"></i>
+                </div>
+                <button type="submit" class="btn w-100">Login</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="text-white text-center py-3" style="background-color: #044aad">
+  <p class="mb-0">© 2025 Havensure Handover 360 | Built on Trust & Transparency</p>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Redirect login based on tab
+    document.getElementById("buyerLogin").addEventListener("submit", function(e){
+      e.preventDefault();
+      window.location.href = "buyer.html";
+    });
+    document.getElementById("builderLogin").addEventListener("submit", function(e){
+      e.preventDefault();
+      window.location.href = "builder.html";
+    });
+    document.getElementById("auditorLogin").addEventListener("submit", function(e){
+      e.preventDefault();
+      window.location.href = "auditor.html";
+    });
+
+    // Password toggle function
+    function togglePassword(inputId, iconId){
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      icon.addEventListener("click", () => {
+        if(input.type === "password"){
+          input.type = "text";
+          icon.classList.replace("bi-eye-fill","bi-eye-slash-fill");
+        } else {
+          input.type = "password";
+          icon.classList.replace("bi-eye-slash-fill","bi-eye-fill");
+        }
+      });
+    }
+
+    togglePassword("buyerPassword","toggleBuyerPassword");
+    togglePassword("builderPassword","toggleBuilderPassword");
+    togglePassword("auditorPassword","toggleAuditorPassword");
+    togglePassword("auditorPassword2","toggleAuditorPassword2");
+  </script>
+  <!-- AI Chatbot Floating Widget -->
+  <div id="ai-chatbot">
+    <div id="chatbox-header">🤖 Ask Havensure AI</div>
+    <div id="chatbox-body" style="display:none;">
+      <div id="chat-messages"></div>
+      <input type="text" id="chat-input" placeholder="Type your question...">
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <style>
+    #ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: white;
+      font-size: 14px;
+      z-index: 9999;
+    }
+    #chatbox-header {
+      background: #000;
+      padding: 10px;
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+    }
+    #chatbox-body {
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    #chat-messages {
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    #chat-input {
+      width: 70%;
+      padding: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+    }
+    #chat-send {
+      width: 25%;
+      background: #ff3131;
+      border: none;
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+      // Collapsible Navbar Search
+  const searchToggle = document.getElementById("searchToggle");
+  const navbarSearch = document.getElementById("navbarSearch");
+  searchToggle.addEventListener("click", () => {
+    if(navbarSearch.style.display === "none" || navbarSearch.style.display === ""){
+      navbarSearch.style.display = "block";
+      navbarSearch.focus();
+    } else {
+      navbarSearch.style.display = "none";
+    }
+  });
+    const chatHeader = document.getElementById("chatbox-header");
+    const chatBody = document.getElementById("chatbox-body");
+    chatHeader.addEventListener("click", () => {
+      chatBody.style.display = (chatBody.style.display === "none") ? "block" : "none";
+    });
+
+    const chatMessages = document.getElementById("chat-messages");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+
+    chatSend.addEventListener("click", () => {
+      const userMsg = chatInput.value.trim();
+      if(userMsg){
+        const userDiv = document.createElement("div");
+        userDiv.textContent = "🧑: " + userMsg;
+        chatMessages.appendChild(userDiv);
+
+        const botDiv = document.createElement("div");
+        botDiv.textContent = "🤖: Thanks for asking! (AI replies will come here)";
+        chatMessages.appendChild(botDiv);
+
+        chatInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    });
+  </script>
+</body>
+</html>

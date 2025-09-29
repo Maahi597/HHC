@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Havensure 360</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons (added for search icon) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      color: white;
+    }
+
+    .page-background {
+      flex: 1;
+      background: linear-gradient(to bottom, #ff3131, rgba(0,0,0,0.1)),
+                  url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      padding: 40px 0;
+    }
+
+    .overlay-box {
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    h2, h3 {
+      color: #fff;
+    }
+
+    img {
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer {
+      background: #000;
+      margin-top: auto;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    ul.text-start {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.text-start li::before {
+      content: "✔️ ";
+    }
+
+    .core-values .col-md-3 {
+      margin-bottom: 20px;
+    }
+
+    /* Navbar search input */
+    #navbarSearch {
+      display: none;
+      width: 200px;
+      transition: width 0.3s ease;
+    }
+    .navbar-brand img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+  </style>
+</head>
+<body>
+  
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/42.png" alt="Havensure Logo" width="150" height="50" class="me-2">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+
+        <!-- Search icon -->
+        <li class="nav-item ms-3 d-flex align-items-center">
+          <button class="btn btn-outline-light p-1" id="searchToggle">
+            <i class="bi bi-search"></i>
+          </button>
+          <input type="text" id="navbarSearch" class="form-control ms-2" placeholder="Search...">
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Main Content -->
+<div class="page-background">
+  <!-- About Havensure 360 with Logo -->
+  <section>
+    <div class="container overlay-box">
+      <h2>About Havensure 360</h2>
+      <p class="lead">At Havensure, our mission is simple — to make sure every homebuyer gets exactly what was promised, and every construction project delivers true value for money.</p>
+      <p>We bridge the <b>trust gap</b> between homebuyers and builders by providing independent audits, snag reports, and compliance checks. With <b>transparency, accountability, and technology</b>, we ensure every home is delivered with confidence.</p>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section>
+    <div class="container overlay-box">
+      <h3>Who We Are</h3>
+      <p>Havensure 360 is a team of passionate engineers, legal experts, and quality auditors dedicated to revolutionizing the real estate handover process. We work independently to safeguard the interests of homebuyers while helping builders deliver projects that meet promised standards.</p>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section>
+    <div class="container overlay-box">
+      <h3>What We Do</h3>
+      <p>From <b>digital snagging inspections</b> to <b>compliance verification</b> and <b>legal due diligence</b>, we cover every aspect of the property handover process. Our advanced technology — including drone inspections, 360° walkthroughs, and AI-driven checklists — ensures no detail is missed.</p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section>
+    <div class="container overlay-box">
+      <h3>Why Choose Us</h3>
+      <ul class="text-start d-inline-block">
+        <li>Over 300+ quality checkpoints for thorough inspection</li>
+        <li>Independent third-party audits for transparent reports</li>
+        <li>Transparent digital dashboards and instant reports</li>
+        <li>Reduced risks of legal and financial disputes</li>
+        <li>Trusted by both <b>homebuyers</b> and <b>builders</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Vision & Mission Side by Side -->
+  <section>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-6">
+          <div class="overlay-box">
+            <h3>Our Vision</h3>
+            <img src="images/Vission.jpg" alt="Our Vision Icon" class="my-3">
+            <p>To empower homeowners and builders with complete transparency, accountability, and peace of mind in every handover.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="overlay-box">
+            <h3>Our Mission</h3>
+            <img src="images/Mission.jpg
+            " alt="Our Mission Icon" class="my-3">
+            <p>Through tech-enabled audits and certifications, we make quality visible, measurable, and undeniable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section>
+    <div class="container overlay-box core-values text-center">
+      <h3>Our Core Values</h3>
+      <div class="row">
+        <div class="col-md-3"><b>Transparency</b><p>Open, honest, and reliable in every interaction.</p></div>
+        <div class="col-md-3"><b>Accountability</b><p>We take responsibility for delivering accurate, trusted results.</p></div>
+        <div class="col-md-3"><b>Innovation</b><p>Leveraging AI, drones, and digital tools for smart auditing.</p></div>
+        <div class="col-md-3"><b>Customer Focus</b><p>Putting homebuyers and builders at the heart of everything we do.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="text-white text-center py-3" style="background-color: #044aad">
+  <p class="mb-0">© 2025 Havensure Handover 360 | Built on Trust & Transparency</p>
+</footer>
+
+<!-- AI Chatbot Floating Widget -->
+<div id="ai-chatbot">
+  <div id="chatbox-header">🤖 Ask Havensure AI</div>
+  <div id="chatbox-body" style="display:none;">
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-input" placeholder="Type your question...">
+    <button id="chat-send">Send</button>
+  </div>
+</div>
+
+<style>
+  #ai-chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: #222;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    color: white;
+    font-size: 14px;
+    z-index: 9999;
+  }
+  #chatbox-header {
+    background: #000;
+    padding: 10px;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+  }
+  #chatbox-body {
+    max-height: 350px;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  #chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  #chat-input {
+    width: 70%;
+    padding: 5px;
+    border: none;
+    background: #333;
+    color: #fff;
+  }
+  #chat-send {
+    width: 25%;
+    background: #ff3131;
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script src="js/script.js"></script>
+
+<script>
+  // Collapsible Navbar Search
+  const searchToggle = document.getElementById("searchToggle");
+  const navbarSearch = document.getElementById("navbarSearch");
+  searchToggle.addEventListener("click", () => {
+    if(navbarSearch.style.display === "none" || navbarSearch.style.display === ""){
+      navbarSearch.style.display = "block";
+      navbarSearch.focus();
+    } else {
+      navbarSearch.style.display = "none";
+    }
+  });
+
+  const chatHeader = document.getElementById("chatbox-header");
+  const chatBody = document.getElementById("chatbox-body");
+  chatHeader.addEventListener("click", () => {
+    chatBody.style.display = (chatBody.style.display === "none") ? "block" : "none";
+  });
+
+  const chatMessages = document.getElementById("chat-messages");
+  const chatInput = document.getElementById("chat-input");
+  const chatSend = document.getElementById("chat-send");
+
+  chatSend.addEventListener("click", () => {
+    const userMsg = chatInput.value.trim();
+    if(userMsg){
+      const userDiv = document.createElement("div");
+      userDiv.textContent = "🧑: " + userMsg;
+      chatMessages.appendChild(userDiv);
+
+      const botDiv = document.createElement("div");
+      botDiv.textContent = "🤖: Thanks for asking! (AI replies will come here)";
+      chatMessages.appendChild(botDiv);
+
+      chatInput.value = "";
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+</script>
+</body>
+</html>

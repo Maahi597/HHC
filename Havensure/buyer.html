@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer Dashboard | Havensure 360</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ff3131, rgba(0,0,0,0.1)),
+                  url("images/background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container-main {
+      flex: 1;
+      padding: 60px 20px;
+    }
+
+    .card {
+      border-radius: 12px;
+      background-color:rgba(0, 0, 0, 0.65);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .table {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .table th {
+      color: #000;
+    }
+
+    .table td, .table th {
+      vertical-align: middle;
+    }
+
+    .progress {
+      height: 25px;
+      background-color: white;
+    }
+
+    .progress-bar {
+      background-color: #000;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: auto;
+      color: #fff;
+    }
+
+    a {
+      color: #ecc72d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+    .navbar-brand img {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+
+    /* Chatbot */
+    #ai-chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: #222;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: white;
+      font-size: 14px;
+      z-index: 9999;
+    }
+    #chatbox-header {
+      background:#000;
+      padding: 10px;
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+    }
+    #chatbox-body {
+      max-height: 350px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+    #chat-messages {
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    #chat-input {
+      width: 70%;
+      padding: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+    }
+    #chat-send {
+      width: 25%;
+      background: #ff3131;
+      border: none;
+      color: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="buyer.html">
+        <img src="images/42.png" alt="Havensure Logo" width="200" height="60" class="me-2">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="buyer.html">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container container-main">
+    <h2 class="mb-4 text-center">Welcome, Buyer 👋</h2>
+    
+    <div class="row mb-4">
+      <!-- Progress -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow p-3">
+          <h5 class="card-title">Audit Progress</h5>
+          <div class="progress mb-2">
+            <div class="progress-bar" role="progressbar" style="width: 70%">70%</div>
+          </div>
+          <p>Your property handover is 70% complete.</p>
+        </div>
+      </div>
+
+      <!-- Reports -->
+      <div class="col-md-6 mb-4">
+        <div class="card shadow p-3">
+          <h5 class="card-title">Recent Reports</h5>
+          <ul>
+            <li><a href="assets/docs/sample-doc.pdf" target="_blank">Snag Report - Feb 2025</a></li>
+            <li><a href="assets/docs/sample-doc.pdf" target="_blank">Compliance Certificate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Snag List -->
+    <div class="card shadow p-3 mb-4">
+      <h5 class="card-title">Snag List</h5>
+      <table class="table table-bordered mb-0">
+        <thead class="table-light">
+          <tr>
+            <th>Issue</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Bathroom Leak</td><td><span class="badge bg-warning text-dark">Pending</span></td></tr>
+          <tr><td>Paint Touch-ups</td><td><span class="badge bg-success">Resolved</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- AI Insights -->
+    <div class="card shadow p-3">
+      <h5 class="card-title">AI Insights 🤖</h5>
+      <form id="aiForm" class="text-center">
+        <input type="file" class="form-control mb-3" id="reportUpload" accept=".pdf,.docx,.txt">
+        <button type="submit" class="btn btn-dark">Analyze with AI</button>
+      </form>
+      <div id="aiResult" class="mt-3 alert alert-info d-none"></div>
+    </div>
+  </div>
+  <style>
+  /* Hover effect for Analyze with AI button */
+  #aiForm button:hover {
+    background-color: #ff3131; /* Change to the color you want on hover */
+    color: #000; /* Optional: change text color on hover */
+    transition: 0.3s; /* Smooth transition */
+  }
+</style>
+
+
+  ]<footer class="text-white text-center py-3" style="background-color: #044aad;">
+  <p class="mb-0">© 2025 Havensure Handover 360 | Built on Trust & Transparency</p>
+</footer>
+
+  <!-- AI Chatbot Floating Widget -->
+  <div id="ai-chatbot">
+    <div id="chatbox-header">🤖 Ask Havensure AI</div>
+    <div id="chatbox-body" style="display:none;">
+      <div id="chat-messages"></div>
+      <input type="text" id="chat-input" placeholder="Type your question...">
+      <button id="chat-send">Send</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    // Chatbot Toggle
+    const chatHeader = document.getElementById("chatbox-header");
+    const chatBody = document.getElementById("chatbox-body");
+    chatHeader.addEventListener("click", () => {
+      chatBody.style.display = (chatBody.style.display === "none") ? "block" : "none";
+    });
+
+    // Chatbot Messages
+    const chatMessages = document.getElementById("chat-messages");
+    const chatInput = document.getElementById("chat-input");
+    const chatSend = document.getElementById("chat-send");
+
+    chatSend.addEventListener("click", () => {
+      const userMsg = chatInput.value.trim();
+      if(userMsg){
+        const userDiv = document.createElement("div");
+        userDiv.textContent = "🧑: " + userMsg;
+        chatMessages.appendChild(userDiv);
+
+        const botDiv = document.createElement("div");
+        botDiv.textContent = "🤖: Thanks for asking! (AI replies will come here)";
+        chatMessages.appendChild(botDiv);
+
+        chatInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    });
+
+    // AI Insights (Demo)
+    document.getElementById("aiForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const resultBox = document.getElementById("aiResult");
+      resultBox.classList.remove("d-none");
+      resultBox.innerHTML = `
+        ✅ Report Analyzed<br>
+        - Electrical systems are safe.<br>
+        - Minor plumbing issues need urgent attention.<br>
+        - Painting quality requires re-check before final handover.
+      `;
+    });
+  </script>
+</body>
+</html>
